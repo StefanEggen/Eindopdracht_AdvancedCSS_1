@@ -1,0 +1,80 @@
+/* Opdracht 2 */
+
+.portfolio-container {
+  @include flex-center;
+  }
+  
+  .portfolio-content {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(20 1fr);
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 20px 40px;
+  }
+  
+  .portfolio-item {
+    border-radius: 20px;
+    border: 3px solid white;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  .portfolio-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    background-color: $achtergrond-overlay;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 500ms ease-in-out;
+    & a {
+      text-decoration: none;
+      background-color: $achtergrond-a-hover;
+      border-radius: 5px;
+      color: #000;
+      margin-top: 15px;
+      padding: 10px 20px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+ 
+  /* Media querie voor tablet weergave */
+  @media screen and (min-width: 768px) {
+    .portfolio-content {
+      display: grid;
+      justify-content: center;
+      grid-template-rows: repeat(20 1fr);
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+      column-gap: 20px;
+      padding: 20px 40px;
+    }
+  }
+  
+  /* Media querie voor desktop weergave */
+  @media screen and (min-width: 992px) {
+    .portfolio-content {
+      display: grid;
+      justify-content: center;
+      grid-template-rows: repeat(20 1fr);
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 30px;
+      column-gap: 30px;
+    }
+  }

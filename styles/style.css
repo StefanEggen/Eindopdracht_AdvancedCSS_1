@@ -1,0 +1,244 @@
+/*Mixins*/
+/* Imports */
+/* Opdracht 1 */
+/* 
+? Hoe kan ik de schaduw voor het hele testimonial gelijk trekken? Nu heb ik per div een box-shadow toegevoegd, en zie je in het resultaat redelijk duidelijk dat 
+dit 3 verschillende box shadows zijn. Ik dacht dit op te lossen door de box-shadow aan .container-testimonial toe tevoegen ipv aan alle drie de classes, maar dat levert niets op. 
+*/
+.container-testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px;
+  width: 600px;
+  box-shadow: 1px 10px 9px 6px rgba(146, 146, 146, 0.76);
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-testimonial {
+  background: white;
+  text-align: center;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  width: 100%;
+  height: 500px;
+  font-size: 24px;
+  line-height: 50px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.foto-testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #686de0;
+}
+
+.img-testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 175px;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  margin-top: -120px;
+}
+
+.footer-testimonial {
+  background: #686de0;
+  text-align: center;
+  width: 100%;
+  height: 150px;
+  line-height: 25px;
+}
+
+.naam-testimonial {
+  color: white;
+  font-size: 28px;
+  font-style: bold;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.url-testimonial {
+  font-size: 20px;
+}
+.url-testimonial a:link, .url-testimonial a:visited, .url-testimonial a:hover, .url-testimonial a:active {
+  text-decoration: none;
+  color: lightgray;
+}
+
+/* Opdracht 2 */
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-content {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(20 1fr);
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 20px 40px;
+}
+
+.portfolio-item {
+  border-radius: 20px;
+  border: 3px solid white;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  width: 300px;
+}
+.portfolio-item img {
+  height: 100%;
+  width: 100%;
+}
+
+.portfolio-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  background-color: #7c9da3;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 500ms ease-in-out;
+}
+.portfolio-overlay a {
+  text-decoration: none;
+  background-color: lightgrey;
+  border-radius: 5px;
+  color: #000;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+.portfolio-overlay:hover {
+  opacity: 1;
+}
+
+/* Media querie voor tablet weergave */
+@media screen and (min-width: 768px) {
+  .portfolio-content {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(20 1fr);
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    padding: 20px 40px;
+  }
+}
+/* Media querie voor desktop weergave */
+@media screen and (min-width: 992px) {
+  .portfolio-content {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(20 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+}
+/* Opdracht 3 */
+.social-media-buttons {
+  position: fixed;
+  top: 50%;
+  left: calc(100% - 60px);
+  list-style-type: none;
+  padding: 0;
+  transform: translateY(-50%);
+  min-width: 275px;
+}
+
+.social-media {
+  align-items: center;
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+.social-media:hover {
+  transform: translateX(calc(-100% + 60px));
+}
+.social-media i {
+  color: #fff;
+  font-size: 20px;
+  padding: 15px 10px 15px 2px;
+  width: 60px;
+}
+.social-media a {
+  text-decoration: none;
+  color: white;
+}
+
+.social-media.blog {
+  background-color: #e17b77;
+}
+
+.social-media.twitter {
+  background-color: #00aced;
+}
+
+.social-media.linkedin {
+  background-color: #007bb6;
+}
+
+.social-media.facebook {
+  background-color: #3b5998;
+}
+
+.social-media.git {
+  background-color: #333;
+}
+
+/* 
+? Waarom had ik, zoals uitgelegd bij de opdracht, onderstaand nog moeten toevoegen? Dat heb ik nu niet gedaan.. Maar werkt wel gewoon. 
+
+.fa-laptop-code::before {
+    content: "\f5fc";
+}
+.fa-twitter::before {
+    content: "\f099";
+}
+.fa-linkedin-in::before {
+    content: "\f0e1";
+}
+.fa-facebook-f::before {
+    content: "\f39e";
+}
+.fa-github::before {
+    content: "\f09b";
+}
+*/
+/* Algemene opmaak */
+header {
+  text-align: center;
+}
+
+body {
+  background: #c3cfe2;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+.header-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width: 100px; */
+  height: 100px;
+}/*# sourceMappingURL=style.css.map */
